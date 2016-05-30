@@ -17,8 +17,13 @@ void draw() {
   background(0);
 
 
-  for (int i=0; i < balls.length; i++ ) {
-    
+for (int i=0; i < balls.length; i++ ) {
+  for (int j=0; j < balls.length; j++) {
+    if ((balls[i].state == Ball.GROWING || balls[i].state == Ball.SHRINKING) && balls[j].state == Ball.MOVING) {
+      if (balls[j].isTouching(balls[i])) 
+         balls[j].state = Ball.GROWING;
+      }
+    }
   }
 
   for (int i=0; i < balls.length; i++ ) {
