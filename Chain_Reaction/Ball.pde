@@ -67,7 +67,7 @@ class Ball {
  
  
  boolean isTouching( Ball other ) {
-   return Math.sqrt(Math.pow(x-other.x,2) + Math.pow(y-other.y, 2)) < rad+other.rad;
+ return Math.sqrt(Math.pow((x-other.x)*2,2) + Math.pow((y-other.y)*2, 2)) <= 10+other.rad;
  }
  
   
